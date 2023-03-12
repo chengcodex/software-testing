@@ -9,6 +9,8 @@ import javax.validation.constraints.NotBlank;
 import java.util.UUID;
 
 @Entity
+// 不接受 client 传输的  id ，只返回给 client
+@JsonIgnoreProperties(value = "id", allowGetters = true)
 public class Customer {
 
     @Id
